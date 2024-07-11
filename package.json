@@ -1,7 +1,10 @@
 {
   "name": "koishi-plugin-dynamic-respondent",
-  "description": "适用于Koishi的可动态投稿的回复插件",
+  "description": "适用于Koishi的可动态投稿的随机回复插件",
   "version": "0.0.1",
+  "contributors": [
+    "TTsdzb <ttsdzb@outlook.com>"
+  ],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -9,14 +12,37 @@
     "dist"
   ],
   "license": "MIT",
-  "scripts": {},
+  "homepage": "https://github.com/TTsdzb/koishi-plugin-dynamic-respondent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TTsdzb/koishi-plugin-dynamic-respondent.git"
+  },
   "keywords": [
     "chatbot",
     "koishi",
     "plugin"
   ],
-  "devDependencies": {},
   "peerDependencies": {
     "koishi": "^4.17.9"
+  },
+  "koishi": {
+    "description": {
+      "zh": "可动态投稿的随机自动回复插件"
+    },
+    "service": {
+      "required": [
+        "database"
+      ],
+      "optional": [
+        "assets"
+      ]
+    }
+  },
+  "dependencies": {
+    "html-escaper": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/html-escaper": "^3",
+    "koishi-plugin-assets-local": "^3.3.2"
   }
 }

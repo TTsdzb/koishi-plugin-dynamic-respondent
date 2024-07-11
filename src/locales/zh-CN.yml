@@ -1,0 +1,42 @@
+commands:
+  dyn-res:
+    description: 随机回复相关的指令。
+    messages:
+      response: "<p>ID: {id}</p>"
+      details: |-
+        <p>ID: {id}</p>
+        <p>创建者 ID: {authorId}</p>
+        <p>创建者: {authorName}</p>
+        <p>匹配消息: {match}</p>
+        <p>忽略消息元素：{escape}</p>
+        <p>内容:</p>
+        <p>{content}</p>
+      notFound: 未找到 ID 为 {id} 的记录。
+
+    post:
+      description: 投稿一个回复文本。
+      options:
+        noescape: 允许解析回复消息中的消息元素。
+        rawassets: 不转存消息中的资源文件，手动填写消息元素时可能有用。
+      messages:
+        pleaseProvideMatch: 请给定匹配文本。
+        pleaseProvideContent: 请给定要回复的消息。
+        success: <p>投稿成功！</p>
+
+    show:
+      description: 查看指定的回复记录。
+      messages:
+        pleaseProvideId: 请指定要查看的记录。
+
+    del:
+      description: 删除指定的回复记录。
+      options:
+        force: 强制删除记录（即使自己不是创建者）。
+      messages:
+        pleaseProvideId: 请指定要删除的记录。
+        forbidden: 你不是这条记录的创建者，无法删除！如果你是 Bot 管理员，请使用“-f”参数。
+        success: 删除记录成功！
+
+_config:
+  storeAssets: |-
+    保存带有消息元素的回复时，转存其中的资源。需要配置任意 `assets` 服务。
