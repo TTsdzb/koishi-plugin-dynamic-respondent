@@ -42,7 +42,7 @@
     "html-escaper": "^3.0.3"
   },
   "devDependencies": {
-    "@types/html-escaper": "^3",
+    "@types/html-escaper": "^3.0.2",
     "koishi-plugin-assets-local": "^3.3.2"
   }
 }
